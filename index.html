@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlockChainX - Future of Decentralized Technology</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #3a86ff;
+            --secondary-color: #8338ec;
+            --dark-color: #1a1a2e;
+            --light-color: #f8f9fa;
+            --success-color: #06d6a0;
+            --warning-color: #ffbe0b;
+            --danger-color: #ef476f;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: #fff;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+        
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 15px 5%;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .nav-btn {
+            margin-left: 30px;
+        }
+        
+        /* Banner Section */
+        .banner {
+            padding: 150px 0 100px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+        }
+        
+        .banner-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .banner-text {
+            flex: 1;
+            padding-right: 50px;
+        }
+        
+        .banner-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            line-height: 1.2;
+        }
+        
+        .banner-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .banner-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .banner-image img {
+            max-width: 100%;
+            height: auto;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Clients Section */
+        .clients {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .client-logos {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        
+        .client-logo {
+            margin: 15px 25px;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+        
+        .client-logo:hover {
+            opacity: 1;
+        }
+        
+        .client-logo img {
+            height: 60px;
+            width: auto;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+        
+        .client-logo:hover img {
+            filter: grayscale(0%);
+        }
+        
+        /* Power of Blockchain Section */
+        .power-section {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .power-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .power-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .power-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .power-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .power-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .power-desc {
+            color: #666;
+            font-size: 1rem;
+        }
+        
+        /* Helping Blockchain Section */
+        .helping-section {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .helping-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .helping-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .helping-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .helping-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .helping-content {
+            padding: 25px;
+        }
+        
+        .helping-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .helping-desc {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        /* Blockchain Future Section */
+        .future-section {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .future-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .future-card {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 300px;
+        }
+        
+        .future-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .future-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(58, 134, 255, 0.9);
+            color: #fff;
+            padding: 20px;
+            transition: all 0.5s ease;
+            height: 30%;
+        }
+        
+        .future-card:hover .future-overlay {
+            height: 100%;
+            background: rgba(131, 56, 236, 0.9);
+        }
+        
+        .future-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .future-desc {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+        
+        .future-card:hover .future-desc {
+            opacity: 1;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .contact-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .contact-image {
+            flex: 1;
+            padding-right: 50px;
+        }
+        
+        .contact-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-form {
+            flex: 1;
+            background: #f9f9f9;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        /* Footer Section */
+        .footer {
+            background-color: var(--dark-color);
+            color: #fff;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .footer-logo span {
+            color: var(--primary-color);
+        }
+        
+        .footer-about p {
+            color: #bbb;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer-title {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .navbar {
+                padding: 15px 3%;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .banner-content {
+                flex-direction: column-reverse;
+            }
+            
+            .banner-text {
+                padding-right: 0;
+                text-align: center;
+                margin-top: 40px;
+            }
+            
+            .banner-buttons {
+                justify-content: center;
+            }
+            
+            .power-grid, .helping-cards, .future-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .contact-content {
+                flex-direction: column;
+            }
+            
+            .contact-image {
+                padding-right: 0;
+                margin-bottom: 40px;
+                text-align: center;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: #fff;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .nav-btn {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+            
+            .banner {
+                padding: 120px 0 80px;
+            }
+            
+            .banner-title {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .client-logos {
+                justify-content: center;
+            }
+            
+            .client-logo {
+                margin: 10px 15px;
+            }
+            
+            .client-logo img {
+                height: 40px;
+            }
+            
+            .power-card, .helping-card {
+                padding: 20px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .banner {
+                padding: 100px 0 60px;
+            }
+            
+            .banner-title {
+                font-size: 1.8rem;
+            }
+            
+            .banner-subtitle {
+                font-size: 1rem;
+            }
+            
+            .banner-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .btn {
+                width: 100%;
+                padding: 12px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+            
+            .power-grid, .helping-cards, .future-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .power-card, .helping-card {
+                padding: 25px;
+            }
+            
+            .future-card {
+                height: 250px;
+            }
+            
+            .contact-form {
+                padding: 25px;
+            }
+            
+            .form-control {
+                padding: 12px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .banner-title {
+                font-size: 1.6rem;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .client-logo img {
+                height: 30px;
+            }
+            
+            .power-icon {
+                font-size: 2.5rem;
+            }
+            
+            .power-title, .helping-title, .future-title {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <a href="#" class="logo">Block<span>ChainX</span></a>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#power">Features</a></li>
+            <li><a href="#future">Solutions</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#">Blog</a></li>
+        </ul>
+        <a href="#" class="btn nav-btn">Get Started</a>
+    </nav>
+
+    <!-- Banner Section -->
+    <section class="banner">
+        <div class="container">
+            <div class="banner-content">
+                <div class="banner-text">
+                    <h1 class="banner-title">Revolutionizing Business with Blockchain Technology</h1>
+                    <p class="banner-subtitle">BlockChainX provides cutting-edge decentralized solutions for enterprises and individuals. Our platform offers security, transparency, and efficiency for your digital transactions.</p>
+                    <a href="#" class="btn">Explore Solutions</a>
+                    <a href="#" class="btn btn-outline">Learn More</a>
+                </div>
+                <div class="banner-image">
+                    <img src="photo-1639762681485-074b7f938ba0.avif">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="clients">
+        <div class="container">
+            <h2 class="section-title">Trusted By Leading Companies</h2>
+            <p class="section-subtitle">We partner with industry leaders to deliver innovative blockchain solutions</p>
+            
+            <div class="client-logos">
+                <div class="client-logo">
+                    <img src="IBM_i_circle_logo.png" alt="IBM">
+                </div>
+                <div class="client-logo">
+                    <img src="amazone.png" alt="Amazon">
+                </div>
+                <div class="client-logo">
+                    <img src="microsoft.png" alt="Microsoft">
+                </div>
+                <div class="client-logo">
+                    <img src="apple.png" alt="Apple">
+                </div>
+                <div class="client-logo">
+                    <img src="ibm.jpg" alt="IBM Watson">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Power of Blockchain Section -->
+    <section class="power-section" id="power">
+        <div class="container">
+            <h2 class="section-title">The Power of Blockchain</h2>
+            <p class="section-subtitle">Discover how blockchain technology can transform your business operations</p>
+            
+            <div class="power-grid">
+                <div class="power-card">
+                    <div class="power-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 class="power-title">Enhanced Security</h3>
+                    <p class="power-desc">Blockchain's decentralized nature and cryptographic algorithms provide unparalleled security for your data and transactions.</p>
+                </div>
+                
+                <div class="power-card">
+                    <div class="power-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3 class="power-title">Decentralization</h3>
+                    <p class="power-desc">Eliminate single points of failure with distributed ledger technology that doesn't rely on central authorities.</p>
+                </div>
+                
+                <div class="power-card">
+                    <div class="power-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="power-title">Transparency</h3>
+                    <p class="power-desc">All transactions are visible to permitted participants, creating trust through verifiable data.</p>
+                </div>
+                
+                <div class="power-card">
+                    <div class="power-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="power-title">Fast Transactions</h3>
+                    <p class="power-desc">Reduce settlement times from days to minutes with blockchain's efficient verification process.</p>
+                </div>
+                
+                <div class="power-card">
+                    <div class="power-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3 class="power-title">Cost Reduction</h3>
+                    <p class="power-desc">Lower operational costs by eliminating intermediaries and automating processes with smart contracts.</p>
+                </div>
+                
+                <div class="power-card">
+                    <div class="power-icon">
+                        <i class="fas fa-fingerprint"></i>
+                    </div>
+                    <h3 class="power-title">Immutable Records</h3>
+                    <p class="power-desc">Once recorded, data cannot be altered, creating a permanent audit trail for compliance and verification.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Helping Blockchain Section -->
+    <section class="helping-section" id="helping">
+        <div class="container">
+            <h2 class="section-title">How We're Helping Blockchain Adoption</h2>
+            <p class="section-subtitle">Our solutions bridge the gap between complex blockchain technology and real-world applications</p>
+            
+            <div class="helping-cards">
+                <div class="helping-card">
+                    <img src="photo-1640161704729-cbe966a08476.avif" alt="Finance" class="helping-img">
+                    <div class="helping-content">
+                        <h3 class="helping-title">Financial Services</h3>
+                        <p class="helping-desc">Revolutionizing payments, remittances, and asset management with decentralized finance solutions that reduce costs and increase accessibility.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="helping-card">
+                    <img src="logo-global-supply-chain-communication-group_1139417-127135.avif" alt="Supply Chain" class="helping-img">
+                    <div class="helping-content">
+                        <h3 class="helping-title">Supply Chain</h3>
+                        <p class="helping-desc">Enhancing traceability and transparency in supply chains with immutable records of product journeys from origin to consumer.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="helping-card">
+                    <img src="91174006-global-health-care-icon-logo-vector-illustration.jpg" alt="Healthcare" class="helping-img">
+                    <div class="helping-content">
+                        <h3 class="helping-title">Healthcare</h3>
+                        <p class="helping-desc">Securing patient data, streamlining medical records, and ensuring drug authenticity through blockchain-powered solutions.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blockchain Future Section -->
+    <section class="future-section" id="future">
+        <div class="container">
+            <h2 class="section-title">The Future of Blockchain</h2>
+            <p class="section-subtitle">Exploring innovative applications that will shape tomorrow's digital landscape</p>
+            
+            <div class="future-grid">
+                <div class="future-card">
+                    <img src="1679992318213.jpeg" alt="NFTs" class="future-img">
+                    <div class="future-overlay">
+                        <h3 class="future-title">NFTs & Digital Ownership</h3>
+                        <p class="future-desc">Blockchain enables verifiable digital ownership through NFTs, revolutionizing art, collectibles, and intellectual property rights.</p>
+                    </div>
+                </div>
+                
+                <div class="future-card">
+                    <img src="meta.jpg" alt="Metaverse" class="future-img">
+                    <div class="future-overlay">
+                        <h3 class="future-title">Metaverse Economy</h3>
+                        <p class="future-desc">Blockchain forms the backbone of the metaverse economy, enabling secure transactions, digital identities, and virtual asset ownership.</p>
+                    </div>
+                </div>
+                
+                <div class="future-card">
+                    <img src="ok.jpg" alt="DAOs" class="future-img">
+                    <div class="future-overlay">
+                        <h3 class="future-title">Decentralized Organizations</h3>
+                        <p class="future-desc">DAOs (Decentralized Autonomous Organizations) use blockchain to create community-governed entities with transparent decision-making.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Have questions about blockchain solutions? Our team is ready to help.</p>
+            
+            <div class="contact-content">
+                <div class="contact-image">
+                    <img src="shutterstock_495741700.jpg" alt="Contact Us">
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Faruk " required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="faruk@example.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" placeholder="Tell us about your blockchain needs..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="#" class="footer-logo">Block<span>ChainX</span></a>
+                    <p>Pioneering blockchain solutions for a decentralized future. We empower businesses with secure, transparent, and efficient digital transformation.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links-container">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#power">Features</a></li>
+                        <li><a href="#future">Solutions</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links-container">
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Blockchain Consulting</a></li>
+                        <li><a href="#">Smart Contract Development</a></li>
+                        <li><a href="#">DApp Development</a></li>
+                        <li><a href="#">NFT Solutions</a></li>
+                        <li><a href="#">Enterprise Blockchain</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links-container">
+                    <h3 class="footer-title">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">GDPR Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 BlockChainX. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
